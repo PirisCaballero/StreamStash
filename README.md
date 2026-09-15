@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons/icon-128.png" width="96" alt="StreamStash">
+  <img src="src/icons/icon-128.png" width="96" alt="StreamStash">
 </p>
 
 <h1 align="center">StreamStash</h1>
@@ -39,7 +39,7 @@ StreamStash todavía no está publicada en las tiendas. Para probarla, carga la 
 **Chrome, Edge o Brave**
 1. Descarga o clona este repositorio.
 2. Abre `chrome://extensions` y activa el **Modo de desarrollador**.
-3. Pulsa **Cargar descomprimida** y selecciona la carpeta del proyecto.
+3. Pulsa **Cargar descomprimida** y selecciona la carpeta `src/`.
 
 **Firefox (121 o superior)**
 1. Ejecuta `./build.sh`.
@@ -59,15 +59,20 @@ Genera `dist/chrome.zip` y `dist/firefox.zip`. Chrome usa `manifest.json` (servi
 ## Estructura
 
 ```
-├── manifest.json            # Manifest V3 para Chrome
-├── manifest.firefox.json    # Manifest V3 para Firefox
-├── background.js            # Detección por red y almacenamiento por pestaña
-├── content.js               # Detección en el DOM
-├── popup.html / popup.js    # Lista de vídeos
-├── download.html / .js      # Descarga HLS y conversión fMP4 → MP4
-├── icons/
-├── docs/                    # Guía de uso
-└── legal/                   # Aviso legal, términos y privacidad
+├── src/                      # Código de la extensión
+│   ├── manifest.json         # Manifest V3 para Chrome
+│   ├── manifest.firefox.json # Manifest V3 para Firefox
+│   ├── background.js         # Detección por red y almacenamiento por pestaña
+│   ├── content.js            # Detección en el DOM
+│   ├── popup.html / popup.js # Lista de vídeos
+│   ├── download.html / .js   # Descarga HLS y conversión fMP4 → MP4
+│   └── icons/
+├── build.sh                  # Genera dist/chrome.zip y dist/firefox.zip
+├── docs/                     # Guía de uso
+├── legal/                    # Aviso legal, términos y privacidad
+├── LICENSE
+├── README.md
+└── CONTRIBUTING.md
 ```
 
 ## Permisos
